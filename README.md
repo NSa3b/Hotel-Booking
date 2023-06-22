@@ -13,7 +13,7 @@ The project is a simple Vue3 implementation on a Hotel booking website that allo
 npm install
 ```
 ## Run Json-server 
- JSON server is an npm package that gives a full fake REST API for front-end developers who need a quick back-end for prototyping and mocking.
+ JSON server is an npm package that gives a full fake REST API for front-end developers who need a quick back-end for prototyping and mocking.-! Warning !-
  ```diff
 -make sure to run the db.json watcher before compiling the vue app.
 ```
