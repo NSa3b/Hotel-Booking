@@ -1,0 +1,90 @@
+{
+  "Hotels": [
+    {
+      "id": 1,
+      "name": "Adiwana Suweta",
+      "location": "Ubud, Indonesia",
+      "rating": 4.5,
+      "reviews": "321",
+      "price": "2500",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/16/0d/ca/adiwana-suweta.jpg?w=500&h=400&s=1"
+    },
+    {
+      "id": 2,
+      "name": "JW Marriott Marquis Hotel Dubai",
+      "location": "Dubai, United Arab Emirates",
+      "rating": 5,
+      "reviews": "243",
+      "price": "4200",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/29/9c/0e/exterior.jpg?w=500&h=400&s=1"
+    },
+    {
+      "id": 3,
+      "name": "Voyage Sorgun",
+      "location": "Side, Türkiye",
+      "rating": 4,
+      "reviews": "461",
+      "price": "1300",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/53/6d/8f/voyage-sorgun.jpg?w=500&h=400&s=1"
+    },
+    {
+      "id": 4,
+      "name": "Grand Velas Los Cabos",
+      "location": "San Jose del Cabo, Mexico",
+      "rating": 3.5,
+      "reviews": "103",
+      "price": "2100",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/25/1a/21/12/gvlc-panoramica.jpg?w=500&h=400&s=1"
+    },
+    {
+      "id": 5,
+      "name": "Riad Kheirredine",
+      "location": "Marrakech, Morocco",
+      "rating": 4.5,
+      "reviews": "529",
+      "price": "1400",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/09/b8/17/32/riad-kheirredine.jpg?w=500&h=400&s=1"
+    },
+    {
+      "id": 6,
+      "name": "Ozen Reserve Bolifushi",
+      "location": "Bolifushi Island, Maldives",
+      "rating": 5,
+      "reviews": "591",
+      "price": "4500",
+      "imgSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/b9/35/b7/ozen-reserve-bolifushi.jpg?w=500&h=400&s=1"
+    }
+  ],
+  "Users": [
+    {
+      "id": "",
+      "email": "",
+      "fullName": " ",
+      "phone": ""
+    }
+  ],
+  "Bookings": [
+    {
+      "email": "saif_91@gmail.com",
+      "fullName": "Saif Mohammed Abdelrahman",
+      "phone": "01109872261",
+      "checkIn": "2023-07-13",
+      "checkOut": "2023-07-16",
+      "rooms": 2,
+      "totalPrice": 8400,
+      "hotelId": 5,
+      "id": 3
+    },
+    {
+      "email": "noha.saab@hotmail.com",
+      "fullName": "Noha Hisham Saab",
+      "phone": "01102073302",
+      "checkIn": "2023-09-07",
+      "checkOut": "2023-09-14",
+      "rooms": 3,
+      "totalPrice": 27300,
+      "hotelId": 3,
+      "id": 4
+    }
+  ]
+}
