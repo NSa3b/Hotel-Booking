@@ -14,7 +14,8 @@ npm install
 ```
 ## Run Json-server 
  JSON server is an npm package that gives a full fake REST API for front-end developers who need a quick back-end for prototyping and mocking.
- -make sure to run the db.json watcher before compiling the vue app.
+ ```diff
+-make sure to run the db.json watcher before compiling the vue app.
 
 ```sh
 json-server --watch db.json
