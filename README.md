@@ -1,6 +1,6 @@
 # Hotel-Booking
 
-The project is a simple Vue3 implementation on a Hotel booking website that allows users to browse hotels, book trips with user info, and delete booked trips.
+The project is a simple Vue3 application of a Hotel booking website that allows users to browse hotels, book trips with user info, and delete booked trips.
 
 ## Recommended IDE Setup
 
