@@ -25,7 +25,6 @@ export default {
         hotel: Object
     },
     methods: {
-
         onBook() {
             this.errors = [];
             const emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9_.+-]+\.[a-zA-Z0-9_.+-]*$/;
@@ -71,10 +70,8 @@ export default {
                     this.Days = Difference_In_Days;
                     console.log(this.Days);
                 }
-
             }
         },
-
     },
     computed: {
         TotalPrice() {
@@ -301,10 +298,6 @@ export default {
     left: 1.6%;
 
 }
-
-
-
-
 
 .modal-enter-from {
     opacity: 0;

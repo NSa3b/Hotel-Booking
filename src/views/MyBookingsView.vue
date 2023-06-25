@@ -5,29 +5,18 @@ export default {
     name: 'myBookings',
     data() {
         return {
-            myBookings: []
-
         }
     },
     components: {
-    Booking_Card,
-    RouterLink
-},
-    methods: {
-        async getBookings() {
-            let response = await fetch("http://localhost:3000/Bookings");
-            let data = await response.json();
-            this.myBookings = data;
-        },
-        async deleteBooking(id){
-            let response = await fetch(`http://localhost:3000/Bookings/${id}`,{method:'Delete'});
-            let data = await response.json();
-            console.log(data);
-            window.location.reload();
+        Booking_Card,
+    },
+    computed:{
+        myBookings(){
+            return this.$store.state.Bookings.myBookings;
         }
     },
-    async created() {
-        await this.getBookings();
+    created() {
+        this.$store.dispatch("Bookings/getBookings");
     }
 }
 </script>
@@ -35,7 +24,7 @@ export default {
 <template>
     <div class="bookings">
         <div v-if="myBookings.length != 0">
-            <div v-for="trip in myBookings">
+            <div v-for="trip in myBookings" :key="trip.id">
                 <Booking_Card @deleteBooking="deleteBooking($event)" :trip="trip"></Booking_Card>
             </div>
         </div>

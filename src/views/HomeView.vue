@@ -16,35 +16,27 @@ export default {
       UserInfoModal: false,
       ThankyouModal: false,
       hoteltoBook: {},
-      Hotels: []
     }
   },
-  methods: {
-    async getHotels() {
-      const response = await fetch("http://localhost:3000/Hotels");
-      const data = await response.json();
-      this.Hotels = data;
+  computed:{
+    Hotels(){
+      return this.$store.state.Hotels.Hotels;
     },
+  },
+  methods: {
     OpenUserInfo(hotel) {
       this.hoteltoBook = hotel;
       this.UserInfoModal = true;
     },
     async Booked(trip) {
-      console.log(trip);
-      const response = await fetch("http://localhost:3000/Bookings", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(trip),
-      });
+      this.$store.dispatch('Bookings/addBooking',trip);
       this.UserInfoModal = false;
       this.ThankyouModal = true;
 
     }
   },
-  async created() {
-    await this.getHotels();
+  created() {
+    this.$store.dispatch('Hotels/getHotels');
   }
 
 }
@@ -61,8 +53,8 @@ export default {
       </div>
     </section>
     <section class="Hotels">
-      <div v-for="hotel in Hotels">
-        <Hotel_Card :hotel="hotel" @OpenUserInfo="OpenUserInfo(hotel)"></Hotel_Card>
+      <div v-for="hotel in Hotels" :key="hotel.id">
+         <Hotel_Card :hotel="hotel" @OpenUserInfo="OpenUserInfo(hotel)"></Hotel_Card>
       </div>
     </section>
     <Teleport to="body">

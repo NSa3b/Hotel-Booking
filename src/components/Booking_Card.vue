@@ -12,14 +12,23 @@ export default {
     },
     methods: {
         async getHotelsDetails() {
-            let hotelId = this.trip.hotelId;
+            let hotelId = this.trip.hotelId;       
             let response = await fetch(`http://localhost:3000/Hotels/${hotelId}`);
             let data = await response.json();
             this.hotel = data;
+        },
+        deleteBooking(id) {
+            this.$store.dispatch("Bookings/deleteBooking", id);
+        }
+    },
+    computed: {
+        totalPrice() {
+            return this.trip.totalPrice.toLocaleString();
         }
     },
     async created() {
         await this.getHotelsDetails();
+
     }
 
 
@@ -86,16 +95,16 @@ export default {
                             <p class="userInfo">{{ trip.phone }}</p>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
 
             <div class="card-body sec2">
                 <div class="price">
-                    <p class="headline">{{ trip.totalPrice }}</p>
+                    <p class="headline">{{ totalPrice }}</p>
                     <p class="sub">EGP</p>
                 </div>
-                <button @click="$emit('deleteBooking',trip.id)" class="moving-btn">Cancel Trip</button>
+                <button @click="deleteBooking(trip.id)" class="moving-btn">Cancel Trip</button>
             </div>
 
         </div>
@@ -131,8 +140,9 @@ export default {
     display: flex;
     flex-direction: column;
     color: rgb(0, 0, 0);
-    padding:1em;
+    padding: 1em;
 }
+
 .sec1 {
     width: 42%;
     border-right: solid 0.05em black;
@@ -164,16 +174,19 @@ export default {
     font-size: 2em;
     font-weight: 700;
 }
-.guest{
+
+.guest {
     font-size: 1.5em;
     font-weight: 600;
 }
-.userInfo{
+
+.userInfo {
     font-size: 1em;
     font-weight: 500;
-    margin:0.1em 1em 0.1em 0;
-    
+    margin: 0.1em 1em 0.1em 0;
+
 }
+
 .contact {
     display: flex;
     flex-wrap: wrap;
@@ -187,21 +200,24 @@ export default {
     margin: 0 0.3em;
     font-size: 0.8em;
 }
+
 .dates {
     display: flex;
 }
+
 .check,
-.room{
+.room {
     width: 100%;
     position: relative;
     padding: 0.2em;
     margin-right: 1em;
     /* background-color: var(--secondary-beige); */
     border: solid 0.005em #e0e0e0;
-    box-shadow: 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
     border-radius: 0.15em;
 }
-.check::before{
+
+.check::before {
     content: "";
     position: absolute;
     width: 0.4em;
@@ -211,20 +227,24 @@ export default {
     border-top-left-radius: 0.2em;
     border-bottom-left-radius: 0.2em;
 }
-.in::before{
-    background-color:#00aa6c;
+
+.in::before {
+    background-color: #00aa6c;
 }
-.out::before{
-    background-color:#c00;
+
+.out::before {
+    background-color: #c00;
 }
-.icontitle{
+
+.icontitle {
     display: flex;
     margin: 0.1em;
 }
-.icontitle p{
+
+.icontitle p {
     font-weight: 500;
     font-size: 0.9em;
-    margin:0 0.3em;
+    margin: 0 0.3em;
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -232,20 +252,25 @@ export default {
     .wrapper {
         font-size: 0.7rem;
     }
+
     .card {
         flex-direction: column;
     }
+
     .card-img {
         width: 100%;
     }
+
     .card-body {
         width: 100%;
         height: 60%;
         padding: 0.5em;
     }
+
     .sec1 {
         border-right: none;
     }
+
     .sec2 {
         display: flex;
         flex-direction: row;
@@ -257,8 +282,8 @@ export default {
     .wrapper {
         font-size: 0.8rem;
     }
+
     .card-body {
         padding: 0.5em;
     }
-}
-</style>
+}</style>
